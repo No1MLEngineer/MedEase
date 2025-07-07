@@ -20,15 +20,16 @@ def display_welcome_message():
     print("***********************************************")
     print(f"\nPSA System running from: {SCRIPT_DIR}\n")
 
-def display_main_menu():
-    """Displays the main menu options."""
-    print("\nMain Menu:")
-    print("1. Knowledge Base Management")
+def display_main_menu(agent):
+    print("\n--- Planetary Scientist's Assistant Main Menu ---")
+    print("1. Knowledge Base")
     print("2. Scientific Utilities")
     print("3. Experiment Logbook")
-    print("4. Data Management (CSV)")
-    print("0. Exit PSA")
-    return input("Please enter your choice (number): ")
+    print("4. Data Management")
+    print("5. Exit")
+    print("\n[Autonomous Agent Suggestion]:", agent.suggest_next_action())
+    choice = input("Enter your choice: ")
+    return choice
 
 # --- Knowledge Base Menu Handler ---
 def handle_knowledge_base_menu():
@@ -290,11 +291,14 @@ def initialize_project_directories():
 
 
 def main_application_loop():
+    from autonomous_agent import AutonomousAgent
+    agent = AutonomousAgent(SCRIPT_DIR)
+
     display_welcome_message()
     initialize_project_directories() # Create all necessary directories upfront
 
     while True:
-        choice = display_main_menu()
+        choice = display_main_menu(agent)
         if choice == '1': handle_knowledge_base_menu()
         elif choice == '2': handle_sci_utils_menu()
         elif choice == '3': handle_experiment_logbook_menu()
@@ -310,3 +314,8 @@ if __name__ == "__main__":
     # This structure assumes main.py is inside 'planetary_scientist_assistant' directory,
     # and this directory is the root for all its modules and data subdirectories.
     main_application_loop()
+
+def add_document(file_path, project_base_path):
+    # Add your logic here, using file_path and project_base_path as needed
+    pass
+
