@@ -1,6 +1,6 @@
-# Planetary Scientist's Assistant (PSA)
+# Planetary Scientist's Assistant Agent (PSAA)
 
-Welcome to the Planetary Scientist's Assistant (PSA)! This AI agent is designed to support scientists in their research and data management tasks, with a strong focus on offline capabilities for potential use on Earth or other planets.
+Welcome to the Planetary Scientist's Assistant Agent (PSAA)! This AI agent is designed to support scientists in their research and data management tasks, with a strong focus on offline capabilities for potential use on Earth or other planets.
 
 ## Project Goal
 
